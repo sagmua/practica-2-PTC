@@ -9,7 +9,7 @@ class Test:
     def __init__(self, nombre_test = ''):
         self.nombre_test = nombre_test
         self.num_preguntas = 0
-        self.preguntas = ['hola']
+        self.preguntas = []
         self.respuestas = []
         
         

@@ -110,7 +110,7 @@ class New_Toplevel_1:
         self.campo_pregunta.configure(width=628)
         self.campo_pregunta.configure(wrap=WORD)
 
-        self.boton_respuesta = Button(self.aniadir_pregunta, command=self.aniadir_respuesta)
+        self.boton_respuesta = Button(self.aniadir_pregunta, command=self.indicar_respuesta)
         self.boton_respuesta.place(relx=0.74, rely=0.61, height=22, width=130)
         self.boton_respuesta.configure(activebackground="#d9d9d9")
         self.boton_respuesta.configure(activeforeground="#000000")
@@ -122,7 +122,7 @@ class New_Toplevel_1:
         self.boton_respuesta.configure(width=130)
         
 
-        self.boton_pregunta = Button(self.aniadir_pregunta)
+        self.boton_pregunta = Button(self.aniadir_pregunta, command=self.indicar_pregunta)
         self.boton_pregunta.place(relx=0.15, rely=0.8, height=82, width=477)
         self.boton_pregunta.configure(activebackground="#d9d9d9")
         self.boton_pregunta.configure(activeforeground="#000000")
@@ -147,7 +147,7 @@ class New_Toplevel_1:
         self.Label3.configure(foreground="#000000")
         self.Label3.configure(text='''valoracion:''')
 
-    def aniadir_respuesta(self):
+    def indicar_respuesta(self):
         valoracion = self.valoracion.get()
         respuesta = self.campo_respuesta.get("1.0",'end-1c')
         
@@ -155,6 +155,12 @@ class New_Toplevel_1:
         self.test.print_respuestas()
         self.valoracion.delete(0, 'end')
         self.campo_respuesta.delete('1.0', END)
+        
+    def indicar_pregunta(self):
+        pregunta = self.campo_pregunta.get("1.0", 'end-1c')
+        self.test.aniadir_pregunta(pregunta)
+        self.test.print_preguntas()
+        self.campo_pregunta.delete('1.0', END)
         
 
 
