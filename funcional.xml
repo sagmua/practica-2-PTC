@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<examen>
+  <pregunta id="1">
+    <enunciado>De que color es el caballo blanco de santiago?</enunciado>
+    <tipo>no-penalizado</tipo>
+    <opciones>
+      <opcion>
+        <texto>Blanco</texto>
+      </opcion>
+      <opcion>
+        <texto>rojo</texto>
+      </opcion>
+      <opcion>
+        <texto>verde</texto>
+      </opcion>
+    </opciones>
+  </pregunta>
+  <pregunta id="2">
+    <enunciado>que numeros son pares?</enunciado>
+    <tipo>varias-validas</tipo>
+    <opciones>
+      <opcion>
+        <texto>2</texto>
+      </opcion>
+      <opcion>
+        <texto>4</texto>
+      </opcion>
+      <opcion>
+        <texto>1</texto>
+      </opcion>
+      <opcion>
+        <texto>1</texto>
+      </opcion>
+      <opcion>
+        <texto>45</texto>
+      </opcion>
+    </opciones>
+  </pregunta>
+  <pregunta id="3">
+    <enunciado>cuanto es 2+2?</enunciado>
+    <tipo>penalizado</tipo>
+    <opciones>
+      <opcion>
+        <texto>4</texto>
+      </opcion>
+      <opcion>
+        <texto>0</texto>
+      </opcion>
+      <opcion>
+        <texto>4</texto>
+      </opcion>
+    </opciones>
+  </pregunta>
+</examen>

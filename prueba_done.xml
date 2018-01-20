@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<examen>
+  <pregunta id="1">
+    <soluciones_elegidas>
+      <solucion>
+        <texto>0</texto>
+      </solucion>
+    </soluciones_elegidas>
+  </pregunta>
+  <pregunta id="2">
+    <soluciones_elegidas>
+      <solucion>
+        <texto>0</texto>
+      </solucion>
+    </soluciones_elegidas>
+  </pregunta>
+  <pregunta id="3">
+    <soluciones_elegidas>
+      <solucion>
+        <texto>0</texto>
+      </solucion>
+      <solucion>
+        <texto>3</texto>
+      </solucion>
+      <solucion>
+        <texto>4</texto>
+      </solucion>
+      <solucion>
+        <texto>5</texto>
+      </solucion>
+    </soluciones_elegidas>
+  </pregunta>
+</examen>

@@ -4,6 +4,7 @@
 # In conjunction with Tcl version 8.6
 #    Jan 17, 2018 11:19:48 AM
 import sys
+import os
 from test import *
 
 try:
@@ -57,6 +58,16 @@ class New_Toplevel_1:
         top.geometry("1122x692+318+105")
         top.title("New Toplevel 1")
         top.configure(background="#d9d9d9")
+        GUI_support.set_Tk_var()
+        
+        
+        font11 = "-family PilGi -size 24 -weight normal -slant roman "  \
+            "-underline 0 -overstrike 0"
+
+
+
+
+        
 
         self.test = Test()
 
@@ -95,6 +106,46 @@ class New_Toplevel_1:
         self.Label2.configure(background="#d9d9d9")
         self.Label2.configure(foreground="#000000")
         self.Label2.configure(text='''Pregunta:''')
+        
+        
+        self.Label3 = Label(self.aniadir_pregunta)
+        self.Label3.place(relx=0.68, rely=0.49, height=24, width=77)
+        self.Label3.configure(background="#d9d9d9")
+        self.Label3.configure(foreground="#000000")
+        self.Label3.configure(text='''Porcentaje:''')
+
+
+        self.Label4 = Label(top)
+        self.Label4.place(relx=0.8, rely=0.03, height=24, width=139)
+        self.Label4.configure(background="#d9d9d9")
+        self.Label4.configure(foreground="#000000")
+        self.Label4.configure(text='''Nombre del examen:''')
+
+        self.Label5 = Label(top)
+        self.Label5.place(relx=0.82, rely=0.4, height=24, width=143)
+        self.Label5.configure(background="#d9d9d9")
+        self.Label5.configure(foreground="#000000")
+        self.Label5.configure(text='''Cargar preguntas de:''')
+        
+
+        self.lista_archivos = ttk.Combobox(top, state="readonly")
+        self.lista_archivos["values"] = self.ficheros_solucion()      
+        
+        self.lista_archivos.place(relx=0.81, rely=0.44, relheight=0.04
+                , relwidth=0.18)
+        
+        self.lista_archivos.configure(takefocus="")
+        
+
+        self.nombre_examen = Entry(top)
+        self.nombre_examen.place(relx=0.8, rely=0.07,height=27, relwidth=0.14)
+        self.nombre_examen.configure(background="white")
+        self.nombre_examen.configure(font="TkFixedFont")
+        self.nombre_examen.configure(foreground="#000000")
+        self.nombre_examen.configure(insertbackground="black")
+        
+        
+
 
         self.campo_pregunta = Text(self.aniadir_pregunta)
         self.campo_pregunta.place(relx=0.02, rely=0.11, relheight=0.25
@@ -133,36 +184,108 @@ class New_Toplevel_1:
         self.boton_pregunta.configure(relief=RAISED)
         self.boton_pregunta.configure(text='''Añadir Pregunta''')
         self.boton_pregunta.configure(width=477)
+        
+        
+        
+        self.boton_generar = Button(top, command=self.generar_examen)
+        self.boton_generar.place(relx=0.25, rely=0.9, height=42, width=357)
+        self.boton_generar.configure(activebackground="#d9d9d9")
+        self.boton_generar.configure(activeforeground="#d9d9d9")
+        self.boton_generar.configure(background="#d1d000")
+        self.boton_generar.configure(font=font11)
+        self.boton_generar.configure(foreground="#000000")
+        self.boton_generar.configure(highlightbackground="#d9d9d9")
+        self.boton_generar.configure(highlightcolor="black")
+        self.boton_generar.configure(text='''Generar test''')
+        self.boton_generar.configure(width=357)
 
-        self.valoracion = Entry(self.aniadir_pregunta)
-        self.valoracion.place(relx=0.68, rely=0.54,height=27, relwidth=0.23)
-        self.valoracion.configure(background="white")
-        self.valoracion.configure(font="TkFixedFont")
-        self.valoracion.configure(foreground="#000000")
-        self.valoracion.configure(insertbackground="black")
 
-        self.Label3 = Label(self.aniadir_pregunta)
-        self.Label3.place(relx=0.68, rely=0.49, height=24, width=77)
-        self.Label3.configure(background="#d9d9d9")
-        self.Label3.configure(foreground="#000000")
-        self.Label3.configure(text='''valoracion:''')
+        
+
+        
+
+
+        self.boton_cargar = Button(top, command=self.cargar_examen)
+        self.boton_cargar.place(relx=0.81, rely=0.5, height=22, width=130)
+        self.boton_cargar.configure(activebackground="#d9d9d9")
+        self.boton_cargar.configure(activeforeground="#000000")
+        self.boton_cargar.configure(background="#d9d9d9")
+        self.boton_cargar.configure(foreground="#000000")
+        self.boton_cargar.configure(highlightbackground="#d9d9d9")
+        self.boton_cargar.configure(highlightcolor="black")
+        self.boton_cargar.configure(text='''Cargar examen''')
+        self.boton_cargar.configure(width=130)
+        
+        
+        
+        
+        self.porcentaje = Spinbox(self.aniadir_pregunta, from_=-150.0, to=150.0)
+        self.porcentaje.place(relx=0.68, rely=0.54,height=27
+                , relwidth=0.08)
+        self.porcentaje.configure(activebackground="#f9f9f9")
+        self.porcentaje.configure(background="white")
+        self.porcentaje.configure(buttonbackground="#d9d9d9")
+        self.porcentaje.configure(foreground="black")
+        self.porcentaje.configure(from_="-150.0")
+        self.porcentaje.configure(highlightbackground="black")
+        self.porcentaje.configure(highlightcolor="black")
+        self.porcentaje.configure(increment="10.0")
+        self.porcentaje.configure(insertbackground="black")
+        self.porcentaje.configure(selectbackground="#c4c4c4")
+        self.porcentaje.configure(selectforeground="black")
+        self.porcentaje.configure(textvariable=GUI_support.spinbox)
+        self.porcentaje.configure(to="150.0")
+        self.porcentaje.configure(width=45)
+        
+        self.ficheros_solucion()
+        
 
     def indicar_respuesta(self):
-        valoracion = self.valoracion.get()
+        porcentaje = self.porcentaje.get()
         respuesta = self.campo_respuesta.get("1.0",'end-1c')
         
-        self.test.aniadir_respuesta(respuesta, valoracion)
-        self.test.print_respuestas()
-        self.valoracion.delete(0, 'end')
+        self.test.aniadir_respuesta(respuesta, porcentaje)
+        #self.test.print_respuestas()
+        self.porcentaje.delete(0, 'end')
         self.campo_respuesta.delete('1.0', END)
         
     def indicar_pregunta(self):
         pregunta = self.campo_pregunta.get("1.0", 'end-1c')
         self.test.aniadir_pregunta(pregunta)
-        self.test.print_preguntas()
+        #self.test.print_preguntas()
         self.campo_pregunta.delete('1.0', END)
         
+        
+    def generar_examen(self):
+        nombre = self.nombre_examen.get()
+        
+        if nombre == '':
+            nombre = 'examen'
+            
+        self.test.generar_xml(nombre_examen=nombre)
+        
+        self.nombre_examen.delete(0, 'end')
+        
+        
+    def ficheros_solucion(self):
+        path = '.'
+        ficheros = []
+    
+        #listamos todos los ficheros:
+        lstDir = os.walk(path)
+        #nos quedamos sólo con los que son solución:
+        for root, dirs, files in lstDir:
+            for f in files:
+                if 'sol.xml' in f:
+                    ficheros.append(f)
+        
+        return ficheros
 
+    def cargar_examen(self):
+        examen = self.lista_archivos.get()
+        
+        if examen != '':
+            self.test.cargar_xml(examen)
 
 
 

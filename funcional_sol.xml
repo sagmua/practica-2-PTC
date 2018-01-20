@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<examen>
+  <pregunta id="1">
+    <enunciado>De que color es el caballo blanco de santiago?</enunciado>
+    <opciones>
+      <opcion>
+        <texto>Blanco</texto>
+        <valoracion>100</valoracion>
+      </opcion>
+      <opcion>
+        <texto>rojo</texto>
+        <valoracion>0</valoracion>
+      </opcion>
+      <opcion>
+        <texto>verde</texto>
+        <valoracion>0</valoracion>
+      </opcion>
+    </opciones>
+  </pregunta>
+  <pregunta id="2">
+    <enunciado>que numeros son pares?</enunciado>
+    <opciones>
+      <opcion>
+        <texto>2</texto>
+        <valoracion>50</valoracion>
+      </opcion>
+      <opcion>
+        <texto>4</texto>
+        <valoracion>50</valoracion>
+      </opcion>
+      <opcion>
+        <texto>1</texto>
+        <valoracion>0</valoracion>
+      </opcion>
+      <opcion>
+        <texto>1</texto>
+        <valoracion>0</valoracion>
+      </opcion>
+      <opcion>
+        <texto>45</texto>
+        <valoracion>0</valoracion>
+      </opcion>
+    </opciones>
+  </pregunta>
+  <pregunta id="3">
+    <enunciado>cuanto es 2+2?</enunciado>
+    <opciones>
+      <opcion>
+        <texto>4</texto>
+        <valoracion>100</valoracion>
+      </opcion>
+      <opcion>
+        <texto>0</texto>
+        <valoracion>-50</valoracion>
+      </opcion>
+      <opcion>
+        <texto>4</texto>
+        <valoracion>-50</valoracion>
+      </opcion>
+    </opciones>
+  </pregunta>
+</examen>

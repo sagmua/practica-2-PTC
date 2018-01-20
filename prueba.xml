@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<examen>
+  <pregunta id="1">
+    <enunciado>¿Desea aprobar PTC?</enunciado>
+    <tipo>no-penalizado</tipo>
+    <opciones>
+      <opcion>
+        <texto>SI</texto>
+      </opcion>
+      <opcion>
+        <texto>NO</texto>
+      </opcion>
+    </opciones>
+  </pregunta>
+  <pregunta id="2">
+    <enunciado>¿cual es la capital de Francia?</enunciado>
+    <tipo>no-penalizado</tipo>
+    <opciones>
+      <opcion>
+        <texto>Paris</texto>
+      </opcion>
+      <opcion>
+        <texto>Madrid</texto>
+      </opcion>
+      <opcion>
+        <texto>Lisboa</texto>
+      </opcion>
+    </opciones>
+  </pregunta>
+  <pregunta id="3">
+    <enunciado>¿que provincias tienen costa?</enunciado>
+    <tipo>varias-validas</tipo>
+    <opciones>
+      <opcion>
+        <texto>Malaga</texto>
+      </opcion>
+      <opcion>
+        <texto>sevilla</texto>
+      </opcion>
+      <opcion>
+        <texto>jaen</texto>
+      </opcion>
+      <opcion>
+        <texto>cadiz</texto>
+      </opcion>
+      <opcion>
+        <texto>granada</texto>
+      </opcion>
+      <opcion>
+        <texto>almeria</texto>
+      </opcion>
+    </opciones>
+  </pregunta>
+</examen>
